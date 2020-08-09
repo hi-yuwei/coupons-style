@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        background: yellowgreen;
+      }
+      .coupon {
+        display: flex;
+        width: 500px;
+        margin: 10px auto;
+      }
+      .content {
+        flex: 1;
+        height: 140px;
+        background-color: #fff;
+      }
+      .ticket {
+        position: relative;
+        width: 10px;
+
+        /* height: 100px; */
+
+        /*        
+        display: flex;
+        justify-content: space-between;
+        text-align: start; */
+      }
+
+      .ticket::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        background: #ffffff;
+
+        background-repeat: no-repeat;
+      }
+      .ticket.left::before {
+        background: radial-gradient(
+            circle at 0 50%,
+            transparent 8px,
+            #ffffff 9px
+          )
+          left bottom;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .ticket.right::before {
+        background: radial-gradient(
+            circle at 100% 50%,
+            transparent 8px,
+            #ffffff 9px
+          )
+          left bottom;
+        top: 0;
+        right: 0;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="coupon">
+      <div class="ticket left"></div>
+      <div class="content"></div>
+      <div class="ticket right"></div>
+    </div>
+  </body>
+</html>
